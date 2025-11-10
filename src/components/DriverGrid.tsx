@@ -1,16 +1,9 @@
 import { Card, CardContent } from "./ui/card";
 import { Trophy, TrendingUp } from "lucide-react";
-import driversData from "@/data/drivers.json";
+import { calculateDriverStats } from "@/lib/raceStats";
 
-interface Driver {
-  id: number;
-  name: string;
-  number: number;
-  points: number;
-  bestPosition: number;
-}
-
-const drivers: Driver[] = driversData.drivers;
+// Calcular estatísticas automaticamente a partir do histórico de corridas
+const drivers = calculateDriverStats();
 
 const DriversGrid = () => {
   return (
@@ -44,7 +37,7 @@ const DriversGrid = () => {
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">Pontos</span>
-                    <span className="font-bold text-primary">{driver.points}</span>
+                    <span className="font-bold text-primary">{driver.totalPoints}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">Melhor Pos.</span>

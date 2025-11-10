@@ -7,26 +7,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import driversData from "@/data/drivers.json";
+import { calculateDriverStats } from "@/lib/raceStats";
 
-interface Driver {
-  id: number;
-  name: string;
-  points: number;
-  wins: number;
-  podiums: number;
-}
-
-// Ordenar drivers por pontos e adicionar position
-const drivers: Driver[] = driversData.drivers
-  .map((driver) => ({
-    id: driver.id,
-    name: driver.name,
-    points: driver.points,
-    wins: driver.wins,
-    podiums: driver.podiums,
-  }))
-  .sort((a, b) => b.points - a.points);
+// Calcular estatísticas automaticamente a partir do histórico de corridas
+const drivers = calculateDriverStats();
 
 const RankingTable = () => {
   const getPositionIcon = (position: number) => {
@@ -79,7 +63,7 @@ const RankingTable = () => {
                     </TableCell>
                     <TableCell className="text-center">
                       <span className="text-lg font-bold text-primary">
-                        {driver.points}
+                        {driver.totalPoints}
                       </span>
                     </TableCell>
                     <TableCell className="text-center text-lg font-semibold">

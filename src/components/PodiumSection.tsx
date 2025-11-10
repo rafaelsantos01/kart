@@ -1,6 +1,6 @@
 import { Trophy } from "lucide-react";
 import { Card } from "./ui/card";
-import driversData from "@/data/drivers.json";
+import { getLastRace } from "@/lib/raceStats";
 
 interface PodiumDriver {
   position: number;
@@ -8,18 +8,36 @@ interface PodiumDriver {
   time: string;
 }
 
-// Pegar os 3 primeiros do pódio da última corrida (ordenados por lastRace.position)
-const podiumDrivers: PodiumDriver[] = driversData.drivers
-  .filter((driver) => driver.lastRace.position <= 3)
-  .sort((a, b) => a.lastRace.position - b.lastRace.position)
-  .map((driver) => ({
-    position: driver.lastRace.position,
-    name: driver.name,
-    time: driver.lastRace.time,
-  }));
+// Pegar os 3 primeiros do pódio da última corrida
+const lastRace = getLastRace();
+const podiumDrivers: PodiumDriver[] = lastRace
+  ? lastRace.results
+    .filter((result) => result.position <= 3)
+    .sort((a, b) => a.position - b.position)
+    .map((result) => {
+      // Encontrar nome do piloto
+      const driverNames: { [key: number]: string } = {
+        1: "Leonardo",
+        2: "Luiz",
+        3: "Matheus",
+        4: "Rubens",
+        5: "Rafael",
+        6: "Samuel",
+        7: "Alexander",
+        8: "William"
+      };
+      return {
+        position: result.position,
+        name: driverNames[result.driverId] || `Piloto ${result.driverId}`,
+        time: result.bestLapTime,
+      };
+    })
+  : [];
 
 // Reordenar para exibir: 2º, 1º, 3º (formato pódio visual)
-const visualPodium = [podiumDrivers[1], podiumDrivers[0], podiumDrivers[2]];
+const visualPodium = podiumDrivers.length === 3
+  ? [podiumDrivers[1], podiumDrivers[0], podiumDrivers[2]]
+  : podiumDrivers;
 
 const PodiumSection = () => {
   const getPodiumHeight = (position: number) => {
@@ -45,7 +63,7 @@ const PodiumSection = () => {
             </h2>
           </div>
           <p className="text-lg text-muted-foreground">
-            {driversData.drivers[0].lastRace.track} - {driversData.drivers[0].lastRace.date}
+            {lastRace ? `${lastRace.track} - ${lastRace.date}` : 'Nenhuma corrida registrada'}
           </p>
         </div>
 
