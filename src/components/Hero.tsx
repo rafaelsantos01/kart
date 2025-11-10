@@ -35,25 +35,25 @@ const Hero = () => {
 
         <div className="flex gap-4">
           <Button size="lg" className="bg-racing-gradient text-lg font-bold hover:opacity-90">
-            Ver Rankings
+            <a href="#podium">Ver Rankings</a>
           </Button>
           <Button size="lg" variant="outline" className="border-primary text-lg font-bold hover:bg-primary/10">
-            Últimas Corridas
+            <a href="#ultimo-podium">Últimas Corridas</a>
           </Button>
         </div>
 
         {/* Stats */}
         <div className="mt-16 grid grid-cols-3 gap-8 md:gap-16">
           <div className="text-center">
-            <div className="text-4xl font-black text-primary md:text-5xl">12</div>
+            <div className="text-4xl font-black text-primary md:text-5xl">8</div>
             <div className="text-sm text-muted-foreground md:text-base">Pilotos</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-black text-accent md:text-5xl">24</div>
+            <div className="text-4xl font-black text-accent md:text-5xl">12</div>
             <div className="text-sm text-muted-foreground md:text-base">Corridas</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-black text-foreground md:text-5xl">2024</div>
+            <div className="text-4xl font-black text-foreground md:text-5xl">2025</div>
             <div className="text-sm text-muted-foreground md:text-base">Temporada</div>
           </div>
         </div>

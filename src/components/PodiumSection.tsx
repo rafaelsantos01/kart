@@ -35,7 +35,7 @@ const PodiumSection = () => {
   };
 
   return (
-    <section className="bg-secondary/30 py-20 px-4">
+    <section className="bg-secondary/30 py-20 px-4" id="ultimo-podium">
       <div className="container mx-auto">
         <div className="mb-16 text-center">
           <div className="mb-4 flex items-center justify-center gap-3">

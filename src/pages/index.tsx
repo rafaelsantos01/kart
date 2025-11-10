@@ -12,11 +12,10 @@ const Index = () => {
       <PodiumSection />
       <DriversGrid />
 
-      {/* Footer */}
       <footer className="border-t border-border bg-secondary/30 py-8 px-4">
         <div className="container mx-auto text-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 Kart Racing. Sistema de Rankings para Pilotos Amadores.
+            © 2025 Kart Racing. Desenvolvido pela <span><a href="https://innovabit.com.br/" target="_blank" rel="noopener noreferrer">InnovaBit</a></span>
           </p>
         </div>
       </footer>

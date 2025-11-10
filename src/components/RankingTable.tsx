@@ -37,7 +37,7 @@ const RankingTable = () => {
   };
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4" id="podium">
       <div className="container mx-auto">
         <div className="mb-10 text-center">
           <h2 className="mb-4 text-4xl font-black tracking-tight md:text-5xl">
