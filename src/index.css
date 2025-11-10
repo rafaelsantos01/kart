@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --background: 0 0% 7%;
+  --foreground: 0 0% 98%;
+
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 0 84% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 60%;
+
+  --accent: 45 93% 58%;
+  --accent-foreground: 0 0% 10%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 0 84% 60%;
+
+  --radius: 0.75rem;
+
+  --racing-gradient: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(0 84% 40%) 100%);
+  --gold-gradient: linear-gradient(135deg, hsl(45 93% 58%) 0%, hsl(35 100% 50%) 100%);
+  --speed-gradient: linear-gradient(90deg, transparent 0%, hsl(0 84% 60% / 0.3) 50%, transparent 100%);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  /* Map component H S% L% variables into usable HSL color tokens */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  /* primary keeps its hsl(...) wrapper for alpha-friendly usage */
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --racing-gradient: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(0 84% 40%) 100%);
+  --gold-gradient: linear-gradient(135deg, hsl(45 93% 58%) 0%, hsl(35 100% 50%) 100%);
+  --speed-gradient: linear-gradient(90deg, transparent 0%, hsl(0 84% 60% / 0.3) 50%, transparent 100%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Gradiente utilities: expõe as variáveis como classes utilitárias para Tailwind/JIT */
+@layer utilities {
+  .bg-racing-gradient {
+    background-image: var(--racing-gradient);
+  }
+  .bg-gold-gradient {
+    background-image: var(--gold-gradient);
+  }
+  .bg-speed-gradient {
+    background-image: var(--speed-gradient);
+  }
+  .primary {
+    color: hsl(var(--primary));
+  }
+}

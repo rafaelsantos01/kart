@@ -1,0 +1,149 @@
+{
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Leonardo",
+      "number": 24,
+      "points": 20,
+      "bestPosition": 1,
+      "wins": 1,
+      "podiums": 1,
+      "lastRace": {
+        "position": 1,
+        "time": "00:00:28.18",
+        "totalTime": "00:50:42.02",
+        "laps": 35,
+        "date": "09/11/2025",
+        "track": "Kartódromo Internacional",
+        "raceNumber": "3227"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Luiz",
+      "number": 5,
+      "points": 15,
+      "bestPosition": 2,
+      "wins": 0,
+      "podiums": 1,
+      "lastRace": {
+        "position": 2,
+        "time": "00:00:29.00",
+        "totalTime": "00:50:36.67",
+        "laps": 34,
+        "date": "09/11/2025",
+        "track": "Kartódromo Internacional",
+        "raceNumber": "3227"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Matheus",
+      "number": 9,
+      "points": 10,
+      "bestPosition": 3,
+      "wins": 0,
+      "podiums": 1,
+      "lastRace": {
+        "position": 3,
+        "time": "00:00:30.00",
+        "totalTime": "00:50:18.65",
+        "laps": 33,
+        "date": "09/11/2025",
+        "track": "Kartódromo Internacional",
+        "raceNumber": "3227"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Rubens",
+      "number": 14,
+      "points": 8,
+      "bestPosition": 4,
+      "wins": 0,
+      "podiums": 0,
+      "lastRace": {
+        "position": 4,
+        "time": "00:00:30.00",
+        "totalTime": "00:50:12.69",
+        "laps": 33,
+        "date": "09/11/2025",
+        "track": "Kartódromo Internacional",
+        "raceNumber": "3227"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Rafael",
+      "number": 2,
+      "points": 6,
+      "bestPosition": 5,
+      "wins": 0,
+      "podiums": 0,
+      "lastRace": {
+        "position": 5,
+        "time": "00:00:30.00",
+        "totalTime": "00:50:11.35",
+        "laps": 33,
+        "date": "09/11/2025",
+        "track": "Kartódromo Internacional",
+        "raceNumber": "3227"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Samuel",
+      "number": 7,
+      "points": 4,
+      "bestPosition": 6,
+      "wins": 0,
+      "podiums": 0,
+      "lastRace": {
+        "position": 6,
+        "time": "00:00:31.00",
+        "totalTime": "00:50:34.03",
+        "laps": 32,
+        "date": "09/11/2025",
+        "track": "Kartódromo Internacional",
+        "raceNumber": "3227"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Alexander",
+      "number": 15,
+      "points": 2,
+      "bestPosition": 7,
+      "wins": 0,
+      "podiums": 0,
+      "lastRace": {
+        "position": 7,
+        "time": "00:00:31.00",
+        "totalTime": "00:50:30.43",
+        "laps": 21,
+        "date": "09/11/2025",
+        "track": "Kartódromo Internacional",
+        "raceNumber": "3227"
+      }
+    }
+  ],
+  "pointsSystem": {
+    "1": 20,
+    "2": 15,
+    "3": 10,
+    "4": 8,
+    "5": 6,
+    "6": 4,
+    "7": 2,
+    "8": 1
+  },
+  "season": {
+    "year": 2025,
+    "name": "Temporada 2025",
+    "racesCompleted": 1,
+    "totalRaces": 16,
+    "lastRaceDate": "09/11/2025",
+    "lastRaceNumber": "3227",
+    "class": "Classe 2"
+  }
+}
