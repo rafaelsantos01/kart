@@ -50,6 +50,7 @@ const driversRegistry = [
   { id: 6, name: "Samuel", number: 7 },
   { id: 7, name: "Alexander", number: 15 },
   { id: 8, name: "William", number: 29 },
+  { id: 9, name: "Vilmar", number: 11 },
 ];
 
 /**
