@@ -1,6 +1,7 @@
 import { Trophy } from "lucide-react";
 import { Button } from "./ui/button";
 import heroImage from "@/assets/hero-kart.jpg";
+import { DRIVERS } from "@/data/races";
 
 const Hero = () => {
   return (
@@ -45,7 +46,7 @@ const Hero = () => {
         {/* Stats */}
         <div className="mt-16 grid grid-cols-3 gap-8 md:gap-16">
           <div className="text-center">
-            <div className="text-4xl font-black text-primary md:text-5xl">8</div>
+            <div className="text-4xl font-black text-primary md:text-5xl">{Object.keys(DRIVERS).length}</div>
             <div className="text-sm text-muted-foreground md:text-base">Pilotos</div>
           </div>
           <div className="text-center">

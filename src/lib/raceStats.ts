@@ -1,6 +1,6 @@
 // Utilitário para calcular estatísticas e pontos dos pilotos baseado no histórico de corridas
 
-import racesData from '@/data/races.json';
+import { RACES, POINTS_SYSTEM, DRIVERS, type Race, type RaceResult } from '@/data/races';
 
 export interface DriverStats {
   id: number;
@@ -22,37 +22,8 @@ export interface DriverStats {
   };
 }
 
-export interface RaceResult {
-  driverId: number;
-  position: number;
-  bestLapTime: string;
-  totalTime: string;
-  laps: number;
-  points?: number;
-}
-
-export interface Race {
-  id: number;
-  raceNumber: string;
-  date: string;
-  track: string;
-  class: string;
-  results: RaceResult[];
-}
-
-// Lista de pilotos (cadastro base)
-const driversRegistry = [
-  { id: 1, name: "Leonardo", number: 25 },
-  { id: 2, name: "Luiz", number: 5 },
-  { id: 3, name: "Matheus", number: 9 },
-  { id: 4, name: "Rubens", number: 14 },
-  { id: 5, name: "Rafael", number: 2 },
-  { id: 6, name: "Samuel", number: 7 },
-  { id: 7, name: "Alexander", number: 15 },
-  { id: 8, name: "William", number: 29 },
-  { id: 9, name: "Vilmar", number: 11 },
-  { id: 10, name: "Gustavo", number: 21 },
-];
+// Converter DRIVERS object para array
+const driversRegistry = Object.values(DRIVERS);
 
 /**
  * Calcula as estatísticas de todos os pilotos baseado no histórico de corridas
@@ -75,13 +46,13 @@ export function calculateDriverStats(): DriverStats[] {
   });
 
   // Processar cada corrida
-  racesData.races.forEach((race: Race) => {
+  RACES.forEach((race: Race) => {
     race.results.forEach((result: RaceResult) => {
-      const driverStats = stats.get(result.driverId);
+      const driverStats = stats.get(result.driver.id);
       if (!driverStats) return;
 
       // Adicionar pontos
-      const points = racesData.pointsSystem[String(result.position) as keyof typeof racesData.pointsSystem] || 0;
+      const points = POINTS_SYSTEM[result.position as keyof typeof POINTS_SYSTEM] || 0;
       driverStats.totalPoints += points;
       driverStats.races += 1;
 
@@ -121,14 +92,14 @@ export function calculateDriverStats(): DriverStats[] {
  * Retorna os dados da última corrida
  */
 export function getLastRace(): Race | undefined {
-  return racesData.races[racesData.races.length - 1];
+  return RACES[RACES.length - 1];
 }
 
 /**
  * Retorna o histórico completo de corridas
  */
 export function getAllRaces(): Race[] {
-  return racesData.races;
+  return RACES;
 }
 
 /**

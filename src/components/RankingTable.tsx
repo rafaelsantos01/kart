@@ -54,7 +54,9 @@ const RankingTable = () => {
                   >
                     <TableCell className="text-center">
                       <div className="flex items-center justify-center gap-2">
-                        {getPositionIcon(position)}
+                        <div className="min-w-4">
+                          {getPositionIcon(position)}
+                        </div>
                         <span className="text-lg font-bold">{position}</span>
                       </div>
                     </TableCell>
